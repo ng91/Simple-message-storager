@@ -11,15 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "messages.h"
 
-#define max_messages_length  1000
-#define max_messages  30
 
-uint8_t messages_count[1];
-int save_point[1];
-uint8_t messages_length[max_messages];
-uint16_t address_to[max_messages];
-uint8_t messages[max_messages_length];
+
 
 
 
@@ -37,53 +32,7 @@ int main(void) {
     	break;
     }
     if(number == 1){
-    	//** Letter write ** //
-    	int length;
-    	int address;
-	    char message[100];
-	    int number_of_start;
-	    save_point[0] = 0;
-	    printf("Enter address : \n");
-	    gets(message);
-	    printf("Write a message : \n");
-	    while(1){
-	    //scanf("%[^\n]s", message);
-	    gets(message);
-	    if(message[0]>31 & message[0]<126){
-	    	break;
-	    }
-
-	    }
-	    length = strlen(message);
-	    for(int i=0;i<length+1;i++){
-	    	if(message[i] == 32){
-	    		message[i] = 95;
-	    	}
-	    }
-
-
-	    printf("Your string: %s\n", message);
-	    for(int i=0; i<max_messages;i++){
-	   	save_point[0] = save_point[0] + messages_length[i];
-	    }
-	    messages_count[0]++;
-
-
-	    messages_length[messages_count[0]]=length;
-	    printf("Length of the message = %d\n", length);
-	    printf("This is number of message = %d\n", messages_count[0]);
-
-
-	    printf("This is save point = %d\n", save_point[0]);
-	    for(int i=0; i<length;i++){
-	    	messages[save_point[0]+i]=message[i];
-	    	message[i]=0;
-	    }
-
-
-
-
-	    //** WRITE LETTER(END) ** //
+    	writeMessage();
     }
 
     if(number==5){
