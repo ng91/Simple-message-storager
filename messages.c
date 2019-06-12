@@ -57,3 +57,22 @@ void writeMessage(){
 
     //** WRITE LETTER(END) ** //
 }
+
+void readMessage(){
+	//** READ LETTER **//
+	int length_below;
+	int num2;
+	char message[100];
+	printf("Wpisz numer");
+	scanf("%d", &num2);
+	for(int i=0; i<num2;i++){
+		length_below = length_below + messages_length[i];
+	}
+	 printf("length below %d\n", length_below);
+	for(int i=0;i<messages_length[num2];i++){
+		message[i] = messages[length_below+i];
+	}
+	printf("Your message: %s\n", message);
+
+	//** READ LETTER(END) **//
+}
