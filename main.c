@@ -34,6 +34,9 @@ int main(void) {
     if(number == 1){
     	writeMessage();
     }
+    if(number == 2){
+    	readMessage();
+    }
 
     if(number==5){
     	printf("This is letters array: %s\n", messages);
